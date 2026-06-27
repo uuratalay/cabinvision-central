@@ -5,7 +5,10 @@
 # Streamlit'te çalıştır: streamlit run dashboard/central/central_dashboard.py
 
 import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
+_HERE = os.path.dirname(os.path.abspath(globals().get('__file__', __import__('os').getcwd())))
+_ROOT = os.path.abspath(os.path.join(_HERE, '..', '..'))
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
 
 import time
 import streamlit as st
