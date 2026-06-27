@@ -86,13 +86,13 @@ with st.sidebar:
 
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("▶ Tümünü Başlat", use_container_width=True, type="primary"):
+        if st.button("▶ Tümünü Başlat", width="stretch", type="primary"):
             st.session_state["sim_calisıyor"] = True
     with col2:
-        if st.button("⏸ Durdur", use_container_width=True):
+        if st.button("⏸ Durdur", width="stretch"):
             st.session_state["sim_calisıyor"] = False
 
-    if st.button("🔄 Tümü Yeni Uçuş", use_container_width=True):
+    if st.button("🔄 Tümü Yeni Uçuş", width="stretch"):
         for gid in GATE_IDS:
             yeni_ucus_baslat(gid)
         st.session_state["sim_calisıyor"] = False
@@ -259,7 +259,7 @@ fig.update_layout(
 )
 fig.update_xaxes(gridcolor="#1c2330")
 fig.update_yaxes(gridcolor="#1c2330")
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width="stretch")
 
 # Ayrı, sade bir doluluk-yüzdesi grafiği (eski grafiğin sadeleştirilmiş hali)
 fig2 = go.Figure(go.Bar(
@@ -279,7 +279,7 @@ fig2.update_layout(
 )
 fig2.update_xaxes(gridcolor="#1c2330")
 fig2.update_yaxes(gridcolor="#1c2330")
-st.plotly_chart(fig2, use_container_width=True)
+st.plotly_chart(fig2, width="stretch")
 
 # ── YÜKSEK RİSKLİ HATLAR ──
 col_r1, col_r2 = st.columns(2)
